@@ -63,5 +63,6 @@ class EmojiReplace(commands.Cog):
                     logging.info(f'Found neat word - {word}')
                     for idx in range(0, len(word)):
                         await message.add_reaction(self.emoji_replace[word[idx]])
+                    break # don't try to react to two words per message
         if("raccoon" in raw_message):
             await message.add_reaction('🦝')
