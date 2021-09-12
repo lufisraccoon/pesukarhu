@@ -1,0 +1,24 @@
+# .env
+PESUKARHU_TOKEN=<token string for bot>
+PESUKARHU_GUILD=<guild bot should enter>
+PESUKARHU_ADMIN_ROLE=<role that's required for commands>
+
+# Channel IDs bot logs to
+PESUKARHU_LOG_CHANNEL=<id for log channel>
+PESUKARHU_WARNING_CHANNEL=<id for warning channel>
+
+# Roles used for verification
+PESUKARHU_VERIFIED_ROLE_ID=<verified role id>
+PESUKARHU_UNVERIFIED_ROLE_ID=<unverified role id>
+PESUKARHU_WARNING_ROLE_ID=<warning_role_id>
+
+# Member verification monitoring
+PESUKARHU_MEMBER_REFRESH_PERIOD=5.0
+PESUKARHU_UNVERIFIED_WARN_DELAY=30.0 # unverified to warning (seconds)
+PESUKARHU_UNVERIFIED_KICK_DELAY=60.0 # unverified to kick (seconds)
+PESUKARHU_RETENTION_TIME=30.0 # time to retain member on list after verification/removal
+PESUKARHU_DITHER_TIME=10.0 # time to dither requests 
+
+# Raid detection - maximum number of people who can join in a rolling window period
+PESUKARHU_RAID_DETECTION_WINDOW=120.0
+PESUKARHU_RAID_DETECTION_LEVEL=2
