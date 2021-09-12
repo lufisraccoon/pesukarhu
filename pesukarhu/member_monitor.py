@@ -357,8 +357,3 @@ class MemberMonitor(commands.Cog):
         guild = self.bot.get_guild(self.guild)
         admin_role = guild.get_role(self.admin_role_id)
         return admin_role in ctx.author.roles
-
-    @commands.Cog.listener()
-    async def on_message(self, message):
-        if("raccoon" in message.content.lower()):
-            await message.add_reaction("🦝")
