@@ -1,0 +1,12 @@
+guild: 874410125648068698
+log_channel: 884228128656990268
+warning_channel: 884228156163231744
+verifier_role: 916771075717734420
+timeout_offset: 30
+intro_message_title: "Start verification process here"
+intro_message_description: "Click on the ✅ emote to start the verification process. You will receive a DM from me. Please ensure that you have DMs enabled from non-friends. If you do not receive a DM, remove the emote and select it again."
+prefix: "This verification process helps us verify that you are a legitimate user for our Discord server. We have a zero-tolerance policy for spam. This process is one of our measures to reduce spam. All answers to these questions will be forwarded to our verification team. Depending on your answers, we will either verify your account, ask further questions, or deny your application. We target completing all verification submissions within one day."
+questions:
+  - "What is the golden rule in <#884228128656990268>?"
+  - "What is your purpose for joining the Personal Finance Discord?"
+  - "What is your current career (if you are not a student) or current area of study (if you are a student)?"

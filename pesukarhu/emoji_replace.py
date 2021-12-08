@@ -1,3 +1,4 @@
+import discord
 from discord.ext import commands
 from discord.ext.commands import bot
 import re
@@ -54,15 +55,20 @@ class EmojiReplace(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
-        raw_message = message.content.lower()
-        raw_message = self.remove_non_alphanumeric.sub('', raw_message)
-        for word in raw_message.split():
-            if(len(''.join(set(word))) == len(word)):
-                if((len(word) > len(self.probability)) or
-                   (random.random() < self.probability[len(word)])):
-                    logging.info(f'Found neat word - {word}')
-                    for idx in range(0, len(word)):
-                        await message.add_reaction(self.emoji_replace[word[idx]])
-                    break # don't try to react to two words per message
-        if("raccoon" in raw_message):
-            await message.add_reaction('🦝')
+        if message.author.bot:
+            # don't respond to myself or other bots
+            return
+
+        if isinstance(message.channel, discord.channel.TextChannel):
+            raw_message = message.content.lower()
+            raw_message = self.remove_non_alphanumeric.sub('', raw_message)
+            for word in raw_message.split():
+                if(len(''.join(set(word))) == len(word)): # if all letters are unique
+                    if((len(word) > len(self.probability)) or
+                    (random.random() < self.probability[len(word)-1])):
+                        logging.info(f'Found neat word - {word}')
+                        for idx in range(0, len(word)):
+                            await message.add_reaction(self.emoji_replace[word[idx]])
+                        break # don't try to react to two words per message
+            if("raccoon" in raw_message):
+                await message.add_reaction('🦝')
